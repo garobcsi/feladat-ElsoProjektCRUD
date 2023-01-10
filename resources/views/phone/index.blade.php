@@ -23,8 +23,7 @@
                         <th>{{$t->memory_size}}</th>
                         <th><a href="/phones/{{$t->id}}" class="btn bg-warning">Show</a></th>
                         <th>
-                            <!--Delete doesn't work when its should work. Madness-->
-                            <form action="{{route("phones.destroy",["id" => $t->id])}}" method="post">
+                            <form action="{{route('phones.destroy',['id' => $t->id])}}" method="post">
                                 @csrf
                                 @method("delete")
                                 <button type="submit" class="btn bg-danger" >Delete</button>
