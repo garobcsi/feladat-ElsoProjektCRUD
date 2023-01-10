@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('color',30);
             $table->string('soc',40);
             $table->integer('memory_size');
+            $table->timestamps();
         });
     }
 

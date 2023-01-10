@@ -15,11 +15,10 @@ class BrandSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('brand')->insert(
+        DB::table('brands')->insert(
             [
                 ["name" => 'apple'],
                 ["name" => 'samsung'],
-                ["name" => 'xiaomi'],
                 ["name" => 'xiaomi'],
                 ["name" => 'huawei'],
                 ["name" => 'sony'],

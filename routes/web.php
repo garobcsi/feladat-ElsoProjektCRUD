@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PhoneController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PhoneController::class, 'index'])->name("home");
+Route::get('/phones/{id}',[PhoneController::class, 'show'])->whereNumber("id")->name('phones.show');
+Route::get('/phones/create', [PhoneController::class, 'create'])->name('phones.create');
+Route::post('/phones', [PhoneController::class, 'store'])->name('phones.store');
+Route::delete('/phones/{id}',[[PhoneController::class, 'destroy']])->name('phones.destroy');
